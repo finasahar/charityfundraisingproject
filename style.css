@@ -1,0 +1,171 @@
+/*  body and background */
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(to right, #e6f5e6, #ffffff);
+  margin: 0;
+  padding: 0;
+  color: #2e7d32;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Header and Footer */
+[data-role="header"], [data-role="footer"] {
+  background: linear-gradient(90deg, #66bb6a, #a5d6a7);
+  color: white;
+  text-align: center;
+  padding: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+[data-role="header"] h1, [data-role="footer"] h4 {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Page content */
+[data-role="content"] {
+  padding: 20px;
+}
+
+/* Section Cards */
+section, .campaign, form {
+  background: #ffffff;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+}
+
+/* Campaign Box */
+.campaign {
+  border-left: 6px solid #4caf50;
+  background: #f1f8e9;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #81c784;
+  color: white;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dropbtn:hover {
+  background-color: #66bb6a;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  right: 0;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #388e3c;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #e8f5e9;
+}
+
+/* Show the dropdown on button click */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Forms */
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+  background-color: #f9fdf9;
+  box-sizing: border-box;
+}
+
+/* Buttons */
+.ui-btn, .ui-btn-b {
+  background: linear-gradient(90deg, #66bb6a, #81c784) !important;
+  color: white !important;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: none;
+  margin-top: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.ui-btn:hover, .ui-btn-b:hover {
+  background: linear-gradient(90deg, #81c784, #66bb6a) !important;
+}
+
+/* Images */
+img {
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+/* List styling inside campaigns */
+.campaign ul {
+  padding-left: 20px;
+}
+
+.campaign ul li {
+  margin-bottom: 10px;
+}
+
+/* Make sections look clean */
+.section {
+  padding: 20px 10px;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .dropbtn, .ui-btn {
+    width: 100%;
+  }
+}

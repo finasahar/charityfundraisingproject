@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Charity & Fundraising UNICEF</title>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link rel="stylesheet" href="style.css"> <!-- your custom styles -->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+
+<!-- HOME PAGE -->
+<div data-role="page" id="home" class="section active">
+
+  <div data-role="header">
+    <h1>Charity & Fundraising UNICEF</h1>
+    <nav>
+      <div class="dropdown">
+        <button class="ui-btn">Menu &#9662;</button>
+        <div class="dropdown-content">
+          <a href="#home" class="ui-btn">Home</a>
+          <a href="#about" class="ui-btn">About Us</a>
+          <a href="#campaigns" class="ui-btn">Campaigns</a>
+          <a href="#get-involved" class="ui-btn">Get Involved</a>
+          <a href="#contact" class="ui-btn">Contact Us</a>
+          <a href="#donation" class="ui-btn">Donation Form</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div data-role="content">
+    <h2>Welcome to Our Charity</h2>
+    <img src="images/home.jpg" alt="Charity helping people" style="width:100%;">
+  </div>
+
+  <div data-role="footer">
+    <h4>&copy; 2025 Charity & Fundraising UNICEF</h4>
+  </div>
+
+</div>
+
+<!-- ABOUT US PAGE -->
+<div data-role="page" id="about" class="section">
+
+  <div data-role="header">
+    <h1>About Us</h1>
+  </div>
+
+  <div data-role="content">
+    <p>Millions of children around the world face devastating losses...</p>
+    <img src="images/wecare.png" alt="Volunteers helping" class="about-img" style="width:100%;">
+  </div>
+
+</div>
+
+<!-- CAMPAIGNS PAGE -->
+<div data-role="page" id="campaigns" class="section">
+
+  <div data-role="header">
+    <h1>Our Campaigns</h1>
+  </div>
+
+  <div data-role="content">
+    <div class="campaign">
+      <h3>LOVE YOURSELF</h3>
+      <ul>
+        <li>A youth-led campaign encouraging mental health awareness</li>
+        <li>Helping young people share stories</li>
+        <li>Tips for emotional well-being</li>
+      </ul>
+    </div>
+    <div class="campaign">
+      <h3>STRONGER TOGETHER MALAYSIA</h3>
+      <ul>
+        <li>Promotes healthier lifestyles during COVID-19</li>
+        <li>Helping people manage stress</li>
+        <li>Providing helpful resources</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- GET INVOLVED PAGE -->
+<div data-role="page" id="get-involved" class="section">
+
+  <div data-role="header">
+    <h1>Get Involved</h1>
+  </div>
+
+  <div data-role="content">
+    <p>You can help by volunteering, donating, or partnering with us:</p>
+    <ul>
+      <li><b>Volunteer your time</b><br><img src="images/volunteer.png" alt="Volunteer" style="width:100%;"></li>
+      <li><b>Make a donation</b><br><img src="images/donation.jpg" alt="Donation" style="width:100%;"></li>
+      <li><b>Partner with us</b><br><img src="images/charity.jpg" alt="Partner" style="width:100%;"></li>
+  </div>
+
+</div>
+
+<!-- CONTACT PAGE -->
+<div data-role="page" id="contact" class="section">
+
+  <div data-role="header">
+    <h1>Contact Us</h1>
+  </div>
+
+  <div data-role="content">
+    <form id="contactForm">
+      <label for="contactName">Full Name:</label>
+      <input type="text" id="contactName" required>
+
+      <label for="contactEmail">Email Address:</label>
+      <input type="email" id="contactEmail" required>
+
+      <label for="contactSubject">Subject:</label>
+      <input type="text" id="contactSubject" required>
+
+      <label for="contactMessage">Message:</label>
+      <textarea id="contactMessage" required></textarea>
+
+      <button type="submit" class="ui-btn ui-btn-b">Send Message</button>
+    </form>
+  </div>
+
+</div>
+
+<!-- DONATION PAGE -->
+<div data-role="page" id="donation" class="section">
+
+  <div data-role="header">
+    <h1>Donation Form</h1>
+  </div>
+
+  <div data-role="content">
+    <form id="donationForm">
+      <label for="donationName">Full Name:</label>
+      <input type="text" id="donationName" required>
+
+      <label for="donationEmail">Email Address:</label>
+      <input type="email" id="donationEmail" required>
+
+      <label for="amount">Amount (MYR):</label>
+      <input type="text" id="amount" required>
+
+      <label for="payment">Payment Method:</label>
+      <select id="payment" required>
+        <option value="">--Select--</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Online Banking">Online Banking</option>
+        <option value="E-Wallet">E-Wallet</option>
+      </select>
+
+      <button type="submit" class="ui-btn ui-btn-b">Donate Now</button>
+    </form>
+  </div>
+
+</div>
+
+<script>
+$(document).on("pagecreate", function() {
+  
+  $("#contactForm").on("submit", function(e) {
+    e.preventDefault();
+    var name = $("#contactName").val().trim();
+    var email = $("#contactEmail").val().trim();
+    var subject = $("#contactSubject").val().trim();
+    var message = $("#contactMessage").val().trim();
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    alert("Thank you! Your message has been sent.");
+    $(this)[0].reset();
+  });
+
+  $("#donationForm").on("submit", function(e) {
+    e.preventDefault();
+    var name = $("#donationName").val().trim();
+    var email = $("#donationEmail").val().trim();
+    var amount = $("#amount").val().trim();
+    var payment = $("#payment").val();
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  
+    if (isNaN(amount) || Number(amount) < 20) {
+      alert("Minimum donation is RM20.");
+      return;
+    }
+    alert("Thank you for your donation!");
+    $(this)[0].reset();
+  });
+
+});
+</script>
+
+</body>
+</html>
